@@ -5,8 +5,10 @@
 ```ts
 
 import { AlignItemsProperty } from 'csstype';
+import { AlignSelfProperty } from 'csstype';
 import { ComponentProps } from '@fluentui/react-utilities';
 import { ComponentState } from '@fluentui/react-utilities';
+import { FlexBasisProperty } from 'csstype';
 import { FlexDirectionProperty } from 'csstype';
 import { GlobalsNumber } from 'csstype';
 import { JustifyContentProperty } from 'csstype';
@@ -15,6 +17,21 @@ import * as React from 'react';
 
 // @public
 export const Flex: React.ForwardRefExoticComponent<FlexProps & React.RefAttributes<HTMLElement>>;
+
+// @public
+export const FlexItem: React.ForwardRefExoticComponent<FlexItemProps & React.RefAttributes<HTMLElement>>;
+
+// @public
+export interface FlexItemProps extends ComponentProps, React.HTMLAttributes<HTMLElement> {
+    align?: AlignSelfProperty;
+    basis?: FlexBasisProperty<string | number>;
+    grow?: GlobalsNumber;
+    order?: GlobalsNumber;
+    shrink?: GlobalsNumber;
+}
+
+// @public
+export type FlexItemState = ComponentState<React.Ref<HTMLElement>, FlexItemProps>;
 
 // @public
 export interface FlexProps extends ComponentProps, React.HTMLAttributes<HTMLElement> {
@@ -35,7 +52,16 @@ export type FlexState = ComponentState<React.Ref<HTMLElement>, FlexProps>;
 export const renderFlex: (state: import("@fluentui/react-utilities").ComponentState<React.Ref<HTMLElement>, import("./Flex.types").FlexProps, never, never>) => JSX.Element;
 
 // @public
+export const renderFlexItem: (state: import("@fluentui/react-utilities").ComponentState<React.Ref<HTMLElement>, import("./FlexItem.types").FlexItemProps, never, never>) => JSX.Element;
+
+// @public
 export const useFlex: (props: FlexProps, ref: React.Ref<HTMLElement>, defaultProps?: FlexProps | undefined) => import("@fluentui/react-utilities").ComponentState<React.Ref<HTMLElement>, FlexProps, never, never>;
+
+// @public
+export const useFlexItem: (props: FlexItemProps, ref: React.Ref<HTMLElement>, defaultProps?: FlexItemProps | undefined) => import("@fluentui/react-utilities").ComponentState<React.Ref<HTMLElement>, FlexItemProps, never, never>;
+
+// @public
+export const useFlexItemStyles: (state: import("@fluentui/react-utilities").ComponentState<import("react").Ref<HTMLElement>, import("./FlexItem.types").FlexItemProps, never, never>) => import("@fluentui/react-utilities").ComponentState<import("react").Ref<HTMLElement>, import("./FlexItem.types").FlexItemProps, never, never>;
 
 // @public
 export const useFlexStyles: (state: import("@fluentui/react-utilities").ComponentState<import("react").Ref<HTMLElement>, import("./Flex.types").FlexProps, never, never>) => import("@fluentui/react-utilities").ComponentState<import("react").Ref<HTMLElement>, import("./Flex.types").FlexProps, never, never>;

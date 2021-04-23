@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FlexItem does not change node structure 1`] = `
+<div>
+  <div
+    class=""
+    style="align-self: auto; flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0;"
+  >
+    Item
+  </div>
+</div>
+`;
