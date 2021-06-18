@@ -1,0 +1,11 @@
+{
+  "name": "nx-dep-graph-image-generator",
+  "version": "0.0.1",
+  "scripts": {
+    "extract": "node extract.js"
+  },
+  "dependencies": {
+    "playwright": "1.12.2",
+    "serve-handler": "6.1.3"
+  }
+}
